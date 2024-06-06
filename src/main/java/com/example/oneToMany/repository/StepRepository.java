@@ -9,7 +9,7 @@ import java.util.List;
 @Repository
 public interface StepRepository extends JpaRepository<Step, Long> {
     // Custom queries can be added here if needed
-    List<Step> findByTitle(String title);
+    List<Step> findByName(String name);
 
 
 }

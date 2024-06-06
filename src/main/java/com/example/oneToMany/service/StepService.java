@@ -25,7 +25,8 @@ public class StepService {
         Optional<Step> existingStep = stepRepository.findById(id);
         if (existingStep.isPresent()) {
             Step step = existingStep.get();
-            step.setTitle(updatedStep.getTitle());
+            step.setName(updatedStep.getName());
+            step.setExercise(updatedStep.getExercise());
             // Update other fields as needed
             return stepRepository.save(step);
         }
