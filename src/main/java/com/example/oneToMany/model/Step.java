@@ -13,11 +13,11 @@ public class Step {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "exercise_id")
     @JsonBackReference
-    private Instructor instructor;
+    private Exercise exercise;
 
-    public Step(String title, Instructor instructor) {
+    public Step(String title, Exercise exercise) {
         this.title = title;
-        this.instructor = instructor;
+        this.exercise = exercise;
     }
 
     public Step(String title) {
@@ -42,12 +42,12 @@ public class Step {
         this.title = title;
     }
 
-    public Instructor getInstructor() {
-        return instructor;
+    public Exercise getExercise() {
+        return exercise;
     }
 
-    public void setInstructor(Instructor instructor) {
-        this.instructor = instructor;
+    public void setExercise(Exercise exercise) {
+        this.exercise = exercise;
     }
 
     public Step() {
@@ -58,9 +58,9 @@ public class Step {
         this.title = title;
     }
 
-    public Step(Long id, String title, Instructor instructor) {
+    public Step(Long id, String title, Exercise exercise) {
         this.id = id;
         this.title = title;
-        this.instructor = instructor;
+        this.exercise = exercise;
     }
 }

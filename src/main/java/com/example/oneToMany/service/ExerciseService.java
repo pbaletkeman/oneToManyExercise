@@ -1,6 +1,6 @@
 package com.example.oneToMany.service;
 
-import com.example.oneToMany.model.Instructor;
+import com.example.oneToMany.model.Exercise;
 import com.example.oneToMany.repository.ExerciseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,26 +17,26 @@ public class ExerciseService {
         this.exerciseRepository = exerciseRepository;
     }
 
-    public Instructor createExercise(Instructor instructor) {
-        return exerciseRepository.save(instructor);
+    public Exercise createExercise(Exercise exercise) {
+        return exerciseRepository.save(exercise);
     }
 
-    public Instructor updateExercise(Long id, Instructor updatedInstructor) {
-        Optional<Instructor> existingInstructor = exerciseRepository.findById(id);
-        if (existingInstructor.isPresent()) {
-            Instructor instructor = existingInstructor.get();
-            instructor.setName(updatedInstructor.getName());
+    public Exercise updateExercise(Long id, Exercise updatedExercise) {
+        Optional<Exercise> existingExercise = exerciseRepository.findById(id);
+        if (existingExercise.isPresent()) {
+            Exercise exercise = existingExercise.get();
+            exercise.setName(updatedExercise.getName());
             // Update other fields as needed
-            return exerciseRepository.save(instructor);
+            return exerciseRepository.save(exercise);
         }
         return null; // Handle not found case
     }
 
-    public List<Instructor> getAllExercises() {
+    public List<Exercise> getAllExercises() {
         return exerciseRepository.findAll();
     }
 
-    public Instructor getExerciseById(Long id) {
+    public Exercise getExerciseById(Long id) {
         return exerciseRepository.findById(id).orElse(null);
     }
 

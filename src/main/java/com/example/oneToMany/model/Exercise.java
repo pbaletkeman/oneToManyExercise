@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class Instructor {
+public class Exercise {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -14,13 +14,12 @@ public class Instructor {
 
     @OneToMany(
         fetch = FetchType.LAZY,
-            mappedBy = "instructor",
+            mappedBy = "exercise",
             cascade = CascadeType.ALL
     )
-//    @JoinColumn(name = "instructor_id")
     private List<Step> steps = new ArrayList<>();
 
-    public Instructor(String name) {
+    public Exercise(String name) {
         this.name = name;
     }
 
@@ -48,10 +47,10 @@ public class Instructor {
         this.steps = steps;
     }
 
-    public Instructor() {
+    public Exercise() {
     }
 
-    public Instructor(Long id, String name, List<Step> steps) {
+    public Exercise(Long id, String name, List<Step> steps) {
         this.id = id;
         this.name = name;
         this.steps = steps;

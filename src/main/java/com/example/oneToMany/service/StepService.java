@@ -41,5 +41,5 @@ public class StepService {
         return stepRepository.findById(id).orElse(null);
     }
 
-    // Other methods (e.g., deleteStep, getStepByInstructor) can be added as needed
+    // Other methods (e.g., deleteStep, getStepByExercise) can be added as needed
 }
