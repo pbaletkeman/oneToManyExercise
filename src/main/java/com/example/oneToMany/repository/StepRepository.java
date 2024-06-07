@@ -10,6 +10,5 @@ import java.util.List;
 public interface StepRepository extends JpaRepository<Step, Long> {
     // Custom queries can be added here if needed
     List<Step> findByName(String name);
-
-
+    List<Step> findByExerciseId(long id);
 }

@@ -3,6 +3,7 @@ package com.example.oneToMany.controller;
 import com.example.oneToMany.model.Exercise;
 import com.example.oneToMany.service.ExerciseService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -48,6 +49,12 @@ public class ExerciseController {
         } else {
             return ResponseEntity.notFound().build();
         }
+    }
+
+    @DeleteMapping("/{ids}")
+    @ResponseStatus(value = HttpStatus.NO_CONTENT)
+    public void deleteExercise(@PathVariable String ids) {
+        exerciseService.deleteManyExercises(ids);
     }
 
     // Other endpoints (e.g., delete, additional queries) can be added as needed

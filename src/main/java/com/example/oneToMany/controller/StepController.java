@@ -3,6 +3,7 @@ package com.example.oneToMany.controller;
 import com.example.oneToMany.model.Step;
 import com.example.oneToMany.service.StepService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -50,5 +51,17 @@ public class StepController {
         }
     }
 
+    @DeleteMapping("/{ids}")
+    @ResponseStatus(value = HttpStatus.NO_CONTENT)
+    public void deleteStep(@PathVariable String ids) {
+        stepService.deleteManySteps(ids);
+    }
+
+    // List all Steps
+    @GetMapping("/exercise/{id}")
+    public ResponseEntity<List<Step>> getExerciseSteps(@PathVariable long id) {
+        List<Step> steps = stepService.getStepByExercise(id);
+        return ResponseEntity.ok(steps);
+    }
     // Other endpoints (e.g., delete, additional queries) can be added as needed
 }

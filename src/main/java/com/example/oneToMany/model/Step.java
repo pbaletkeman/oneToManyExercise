@@ -77,6 +77,22 @@ public class Step {
     return exercise;
   }
 
+  public Long getStepNum() {
+    return stepNum;
+  }
+
+  public void setStepNum(Long stepNum) {
+    this.stepNum = stepNum;
+  }
+
+  public String getDescription() {
+    return description;
+  }
+
+  public void setDescription(String description) {
+    this.description = description;
+  }
+
   public void setExercise(Exercise exercise) {
     this.exercise = exercise;
   }
@@ -107,7 +123,7 @@ public class Step {
         .add("name='" + name + "'")
         .add("stepNum=" + stepNum)
         .add("description='" + description + "'")
-        .add("exercise=" + exercise)
+//        .add("exercise=" + exercise)
         .toString();
   }
 }
