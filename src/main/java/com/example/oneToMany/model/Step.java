@@ -57,6 +57,13 @@ public class Step {
     this.exercise = exercise;
   }
 
+  public Step(String name, Long stepNum, String description, Exercise exercise) {
+    this.name = name;
+    this.stepNum = stepNum;
+    this.description = description;
+    this.exercise = exercise;
+  }
+
   public Long getId() {
     return id;
   }
