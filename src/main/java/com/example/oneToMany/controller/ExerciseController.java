@@ -33,7 +33,7 @@ public class ExerciseController {
         return ResponseEntity.ok(updatedExercise);
     }
 
-    // List all exercise
+    // List all exercises
     @GetMapping
     public ResponseEntity<List<Exercise>> getAllExercises() {
         List<Exercise> exercises = exerciseService.getAllExercises();
