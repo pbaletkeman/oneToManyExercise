@@ -1,6 +1,6 @@
-package com.example.oneToMany.repository;
+package com.example.OneToMany.repository;
 
-import com.example.oneToMany.model.Exercise;
+import com.example.OneToMany.model.Exercise;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

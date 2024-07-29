@@ -1,9 +1,7 @@
-package com.example.oneToMany.service;
+package com.example.OneToMany.service;
 
-import com.example.oneToMany.model.Exercise;
-import com.example.oneToMany.model.Routine;
-import com.example.oneToMany.repository.ExerciseRepository;
-import com.example.oneToMany.repository.RoutineRepository;
+import com.example.OneToMany.model.Routine;
+import com.example.OneToMany.repository.RoutineRepository;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
@@ -14,11 +12,9 @@ import org.springframework.stereotype.Service;
 public class RoutineService {
 
   private final RoutineRepository routineRepository;
-  private final ExerciseRepository exerciseRepository;
 
   @Autowired
-  public RoutineService(RoutineRepository routineRepository, ExerciseRepository exerciseRepository) {
-    this.exerciseRepository = exerciseRepository;
+  public RoutineService(RoutineRepository routineRepository) {
     this.routineRepository = routineRepository;
   }
 
@@ -26,25 +22,12 @@ public class RoutineService {
     return routineRepository.save(routine);
   }
 
-  public Routine updateRoutine(Long id, Routine updatedRoutine) {
-    return updateRoutine(id, updatedRoutine, false);
-  }
-
-  public Routine updateRoutine(Long id, Routine updateRoutine, boolean updateExercise) {
+  public Routine updateRoutine(Long id, Routine updateRoutine) {
     Optional<Routine> existingRoutine = routineRepository.findById(id);
     if (existingRoutine.isPresent()) {
       // Update other fields as needed
       Routine routine = existingRoutine.get();
       routine.setName((updateRoutine.getName()));
-      if (updateExercise) {
-        Exercise exercise;
-        for (Long i : updateRoutine.getExercises().stream().map(Exercise::getId).toList()) {
-          exercise = exerciseRepository.findById(i).orElse(null);
-          if (exercise != null) {
-            exercise.setRoutine(routine);
-          }
-        }
-      }
       return routineRepository.save(routine);
     }
     return null; // handle not found case

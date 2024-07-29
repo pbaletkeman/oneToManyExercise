@@ -1,7 +1,7 @@
-package com.example.oneToMany.controller;
+package com.example.OneToMany.controller;
 
-import com.example.oneToMany.model.Exercise;
-import com.example.oneToMany.service.ExerciseService;
+import com.example.OneToMany.model.Exercise;
+import com.example.OneToMany.service.ExerciseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

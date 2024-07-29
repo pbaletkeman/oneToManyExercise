@@ -1,7 +1,7 @@
-package com.example.oneToMany.service;
+package com.example.OneToMany.service;
 
-import com.example.oneToMany.model.Step;
-import com.example.oneToMany.repository.StepRepository;
+import com.example.OneToMany.model.Step;
+import com.example.OneToMany.repository.StepRepository;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;

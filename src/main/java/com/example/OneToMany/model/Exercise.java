@@ -1,4 +1,4 @@
-package com.example.oneToMany.model;
+package com.example.OneToMany.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.CascadeType;
@@ -9,11 +9,13 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 import java.util.StringJoiner;
 
 @Entity
@@ -33,16 +35,24 @@ public class Exercise {
   )
   private List<Step> steps = new ArrayList<>();
 
-  @ManyToOne
-  @JoinColumn(name = "routine_id")
+  @ManyToMany(fetch = FetchType.LAZY,
+      cascade = {
+          CascadeType.PERSIST,
+          CascadeType.MERGE
+      })
   @JsonBackReference
-  private Routine routine;
+  @JoinTable (
+      name = "routineExercise",
+      joinColumns = @JoinColumn(name = "exerciseId"),
+      inverseJoinColumns = @JoinColumn(name = "routineId")
+  )
+  private Set<Routine> routine;
 
-  public Routine getRoutine() {
+  public Set<Routine> getRoutine() {
     return routine;
   }
 
-  public void setRoutine(Routine routine) {
+  public void setRoutine(Set<Routine> routine) {
     this.routine = routine;
   }
 

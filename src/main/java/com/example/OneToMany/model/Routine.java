@@ -1,5 +1,6 @@
-package com.example.oneToMany.model;
+package com.example.OneToMany.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -7,10 +8,12 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-import java.util.ArrayList;
-import java.util.List;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 import java.util.StringJoiner;
 
 @Entity
@@ -21,13 +24,19 @@ public class Routine {
 
   @Column(name = "name")
   private String name;
-
-  @OneToMany (
-      fetch =  FetchType.LAZY,
-      mappedBy = "routine",
-      cascade = CascadeType.ALL
+  @ManyToMany(fetch = FetchType.LAZY,
+      cascade = {
+          CascadeType.PERSIST,
+          CascadeType.MERGE
+      })
+  @JsonBackReference
+  @JoinTable(
+      name = "routineExercise",
+      inverseJoinColumns = @JoinColumn(name = "exerciseId"),
+      joinColumns = @JoinColumn(name = "routineId")
   )
-  private List<Exercise> exercises = new ArrayList<>();
+  private Set<Exercise> exercises = new HashSet<>();
+
 
   @Column(name = "reps")
   private int reps;
@@ -38,7 +47,7 @@ public class Routine {
 
   }
 
-  public Routine(long id, String name, List<Exercise> exercises, int reps) {
+  public Routine(long id, String name, Set<Exercise> exercises, int reps) {
     this.id = id;
     this.name = name;
     this.exercises = exercises;
@@ -61,11 +70,11 @@ public class Routine {
     this.name = name;
   }
 
-  public List<Exercise> getExercises() {
+  public Set<Exercise> getExercises() {
     return exercises;
   }
 
-  public void setExercises(List<Exercise> exercises) {
+  public void setExercises(Set<Exercise> exercises) {
     this.exercises = exercises;
   }
 

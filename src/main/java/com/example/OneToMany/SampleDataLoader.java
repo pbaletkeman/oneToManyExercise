@@ -1,9 +1,9 @@
-package com.example.oneToMany;
+package com.example.OneToMany;
 
-import com.example.oneToMany.model.Step;
-import com.example.oneToMany.model.Exercise;
-import com.example.oneToMany.repository.StepRepository;
-import com.example.oneToMany.repository.ExerciseRepository;
+import com.example.OneToMany.model.Step;
+import com.example.OneToMany.model.Exercise;
+import com.example.OneToMany.repository.StepRepository;
+import com.example.OneToMany.repository.ExerciseRepository;
 import java.util.ArrayList;
 import java.util.Random;
 import net.datafaker.Faker;

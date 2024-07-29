@@ -1,10 +1,9 @@
-package com.example.oneToMany.service;
+package com.example.OneToMany.service;
 
-import com.example.oneToMany.model.Exercise;
-import com.example.oneToMany.model.Step;
-import com.example.oneToMany.repository.ExerciseRepository;
-import com.example.oneToMany.repository.StepRepository;
-import java.util.ArrayList;
+import com.example.OneToMany.model.Exercise;
+import com.example.OneToMany.model.Step;
+import com.example.OneToMany.repository.ExerciseRepository;
+import com.example.OneToMany.repository.StepRepository;
 import java.util.Arrays;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
