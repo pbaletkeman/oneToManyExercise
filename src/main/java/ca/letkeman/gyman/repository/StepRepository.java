@@ -1,6 +1,6 @@
-package com.example.OneToMany.repository;
+package ca.letkeman.gyman.repository;
 
-import com.example.OneToMany.model.Step;
+import ca.letkeman.gyman.model.Step;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

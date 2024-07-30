@@ -1,9 +1,9 @@
-package com.example.OneToMany.service;
+package ca.letkeman.gyman.service;
 
-import com.example.OneToMany.model.Exercise;
-import com.example.OneToMany.model.Step;
-import com.example.OneToMany.repository.ExerciseRepository;
-import com.example.OneToMany.repository.StepRepository;
+import ca.letkeman.gyman.repository.ExerciseRepository;
+import ca.letkeman.gyman.repository.StepRepository;
+import ca.letkeman.gyman.model.Exercise;
+import ca.letkeman.gyman.model.Step;
 import java.util.Arrays;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

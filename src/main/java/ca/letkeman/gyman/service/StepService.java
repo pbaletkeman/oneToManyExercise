@@ -1,7 +1,7 @@
-package com.example.OneToMany.service;
+package ca.letkeman.gyman.service;
 
-import com.example.OneToMany.model.Step;
-import com.example.OneToMany.repository.StepRepository;
+import ca.letkeman.gyman.model.Step;
+import ca.letkeman.gyman.repository.StepRepository;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;

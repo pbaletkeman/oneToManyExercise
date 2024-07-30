@@ -1,7 +1,7 @@
-package com.example.OneToMany.service;
+package ca.letkeman.gyman.service;
 
-import com.example.OneToMany.model.Routine;
-import com.example.OneToMany.repository.RoutineRepository;
+import ca.letkeman.gyman.model.Routine;
+import ca.letkeman.gyman.repository.RoutineRepository;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;

@@ -1,7 +1,7 @@
-package com.example.OneToMany.controller;
+package ca.letkeman.gyman.controller;
 
-import com.example.OneToMany.model.Step;
-import com.example.OneToMany.service.StepService;
+import ca.letkeman.gyman.model.Step;
+import ca.letkeman.gyman.service.StepService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

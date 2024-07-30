@@ -1,9 +1,9 @@
-package com.example.OneToMany;
+package ca.letkeman.gyman;
 
-import com.example.OneToMany.model.Step;
-import com.example.OneToMany.model.Exercise;
-import com.example.OneToMany.repository.StepRepository;
-import com.example.OneToMany.repository.ExerciseRepository;
+import ca.letkeman.gyman.model.Exercise;
+import ca.letkeman.gyman.model.Step;
+import ca.letkeman.gyman.repository.ExerciseRepository;
+import ca.letkeman.gyman.repository.StepRepository;
 import java.util.ArrayList;
 import java.util.Random;
 import net.datafaker.Faker;

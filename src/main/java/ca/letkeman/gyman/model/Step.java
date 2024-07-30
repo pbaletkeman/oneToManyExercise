@@ -1,4 +1,4 @@
-package com.example.OneToMany.model;
+package ca.letkeman.gyman.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.Column;

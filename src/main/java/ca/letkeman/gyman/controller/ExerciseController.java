@@ -1,7 +1,7 @@
-package com.example.OneToMany.controller;
+package ca.letkeman.gyman.controller;
 
-import com.example.OneToMany.model.Exercise;
-import com.example.OneToMany.service.ExerciseService;
+import ca.letkeman.gyman.model.Exercise;
+import ca.letkeman.gyman.service.ExerciseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
